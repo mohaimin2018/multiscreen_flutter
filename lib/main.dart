@@ -95,6 +95,86 @@ class ThirdRoute extends StatelessWidget {
             Image.asset('images/img_3.jpg', height: 500, width: 500),
             Center(
               child: CupertinoButton(
+                child: const Text('Next route'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(builder: (context) => const FourthRoute()),
+                  );
+                },
+              ),
+            ),
+            Center(
+              child: CupertinoButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('Go back!'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class FourthRoute extends StatelessWidget {
+  const FourthRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('Fourth Route'),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            Image.asset('images/img_4.jpg', height: 500, width: 500),
+            Center(
+              child: CupertinoButton(
+                child: const Text('Next route'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(builder: (context) => const FifthRoute()),
+                  );
+                },
+              ),
+            ),
+            Center(
+              child: CupertinoButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('Go back!'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class FifthRoute extends StatelessWidget {
+  const FifthRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('Fifth Route'),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            Image.asset('images/img_5.jpg', height: 500, width: 500),
+            Center(
+              child: CupertinoButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
