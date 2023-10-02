@@ -55,6 +55,46 @@ class SecondRoute extends StatelessWidget {
             Image.asset('images/img_2.jpg', height: 500, width: 500),
             Center(
               child: CupertinoButton(
+                child: const Text('Next route'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(builder: (context) => const ThirdRoute()),
+                  );
+                },
+              ),
+            ),
+            Center(
+              child: CupertinoButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('Go back!'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ThirdRoute extends StatelessWidget {
+  const ThirdRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('Third Route'),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            Image.asset('images/img_3.jpg', height: 500, width: 500),
+            Center(
+              child: CupertinoButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
